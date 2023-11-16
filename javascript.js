@@ -1,14 +1,11 @@
-// Define an array of numbers
-var numbers = [10, 20, 30, 40, 50];
+let userInput = prompt("What flavors of ice cream would you like? please seperate it with commas.");
+let flavors = userInput.split(",");
 
-// Calculate the sum of the numbers
-var sum = 0;
-for (var i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-}
+const ScoopCount = {};
 
-// Calculate the average
-var average = sum / numbers.length;
+flavors.forEach(function(flavor) {
+    ScoopCount[flavor] = (ScoopCount[flavor] || 0) + 1;
+});
 
-// Log the average to the console
-console.log("The average is: " + average);
+console.log("Froyo Order Summary:");
+console.log(ScoopCount);
